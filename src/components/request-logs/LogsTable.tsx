@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import TableRow from "./TableRow";
 import type { LogEntry } from "./TableRow";
@@ -157,24 +158,24 @@ const LogsTable: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="border border-[color:var(--Border-Primary,#EBEDEF)] bg-white mt-3.5 mx-8 rounded-lg border-solid max-md:max-w-full max-md:mr-2.5">
-        <div className="items-center rounded-[8px)_var(--Spacing-system-Radius-s,8px)_0px_0p] border-b-[color:var(--Border-Secondary,#DADDE2)] flex min-h-12 w-full max-w-[1126px] text-sm text-[#7C8598] font-medium leading-none flex-wrap bg-[#F9FBFC] border-b border-solid max-md:max-w-full">
-          <div className="text-[#7C8598] text-sm font-medium leading-[20px)] pl-4 w-[140px]">
+      <div className="border border-[#EBEDEF] bg-white mt-3.5 mx-8 rounded-lg border-solid max-md:max-w-full max-md:mr-2.5">
+        <div className="flex items-center min-h-[48px] w-full max-w-[1126px] text-sm text-[#7C8598] font-medium bg-[#F9FBFC] border-b border-[#DADDE2] rounded-t-lg max-md:max-w-full">
+          <div className="flex items-center justify-center w-[140px] px-4 py-2">
             Request ID
           </div>
-          <div className="text-[#7C8598] text-sm font-medium leading-[20px)] w-[206px]">
+          <div className="flex items-center justify-center w-[206px] px-4 py-2">
             Timestamp
           </div>
-          <div className="text-[#7C8598] text-sm font-medium leading-[20px)] w-[98px]">
+          <div className="flex items-center justify-center w-[98px] px-4 py-2">
             Status code
           </div>
-          <div className="text-[#7C8598] text-sm font-medium leading-[20px)] w-[124px]">
+          <div className="flex items-center justify-center w-[124px] px-4 py-2">
             HTTP method
           </div>
-          <div className="text-[#7C8598] text-sm font-medium leading-[20px)] w-64">
+          <div className="flex items-center justify-center w-64 px-4 py-2">
             Endpoint
           </div>
-          <div className="text-[#7C8598] text-sm font-medium leading-[20px)] w-[156px]">
+          <div className="flex items-center justify-center w-[156px] px-4 py-2">
             Platform
           </div>
         </div>

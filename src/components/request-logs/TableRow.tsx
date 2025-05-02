@@ -1,3 +1,4 @@
+
 import React from "react";
 import StatusIndicator from "./StatusIndicator";
 
@@ -18,30 +19,30 @@ interface TableRowProps {
 
 const TableRow: React.FC<TableRowProps> = ({ log }) => {
   return (
-    <div className="items-center border-b-[color:var(--Border-Primary,#EBEDEF)] flex min-h-12 w-full max-w-[1126px] flex-wrap border-b border-solid max-md:max-w-full">
-      <div className="text-[#4A525F] text-sm font-medium self-stretch min-h-[33px] gap-2 whitespace-nowrap leading-none grow shrink w-[140px] pr-[var(--Spacing-system-Spacing-m,] my-auto pl-[}] pt-[8px)] pb-[16px;]">
+    <div className="flex items-center border-b border-solid border-[#EBEDEF] min-h-[48px] w-full max-w-[1126px] max-md:max-w-full">
+      <div className="flex items-center justify-center text-[#4A525F] text-sm font-medium w-[140px] px-4 py-2">
         {log.requestId}
       </div>
-      <div className="text-[#4A525F] text-sm font-medium self-stretch min-h-10 gap-2 leading-none grow shrink w-[206px] pr-[var(--Spacing-system-Spacing-m,] my-auto pl-[}] pt-[8px)] pb-[16px;]">
+      <div className="flex items-center justify-center text-[#4A525F] text-sm font-medium w-[206px] px-4 py-2">
         {log.timestamp}
       </div>
-      <div className="items-center self-stretch flex min-h-10 gap-2 grow shrink w-[98px] pr-[var(--Spacing-system-Spacing-m,] my-auto pl-[}] pt-[8px)] pb-[16px;]">
+      <div className="flex items-center justify-center w-[98px] px-4 py-2">
         <StatusIndicator type={log.statusType} code={log.statusCode} />
       </div>
-      <div className="text-[#4A525F] text-sm font-medium self-stretch min-h-[33px] gap-2 whitespace-nowrap leading-none grow shrink w-[124px] pr-[var(--Spacing-system-Spacing-m,] my-auto pl-[}] pt-[8px)] pb-[16px;]">
+      <div className="flex items-center justify-center text-[#4A525F] text-sm font-medium w-[124px] px-4 py-2">
         {log.httpMethod}
       </div>
-      <div className="text-[#4A525F] text-sm font-medium self-stretch min-w-60 min-h-[33px] gap-2 whitespace-nowrap leading-none grow shrink w-64 pr-[var(--Spacing-system-Spacing-m,] my-auto pl-[}] pt-[8px)] pb-[16px;]">
+      <div className="flex items-center justify-center text-[#4A525F] text-sm font-medium min-w-60 w-64 px-4 py-2">
         {log.endpoint}
       </div>
-      <div className="items-center self-stretch flex gap-2 text-sm text-[#4A525F] font-medium whitespace-nowrap leading-none grow shrink w-[156px] pr-[var(--Spacing-system-Spacing-m,] pl-[var(--Spacing-system-Spacing-m,] my-auto py-[8px)]">
+      <div className="flex items-center justify-center gap-2 w-[156px] px-4 py-2">
         <img
           src={log.platformIcon}
-          className="aspect-[1] object-contain w-4 self-stretch shrink-0 my-auto"
+          className="w-4 h-4 object-contain"
         />
-        <div className="text-[#4A525F] text-sm font-medium self-stretch my-auto">
+        <span className="text-[#4A525F] text-sm font-medium">
           {log.platform}
-        </div>
+        </span>
       </div>
     </div>
   );
