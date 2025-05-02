@@ -1,7 +1,13 @@
-
 import React, { useState } from "react";
 import TableRow from "./TableRow";
 import type { LogEntry } from "./TableRow";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
 const mockLogs: LogEntry[] = [
   {
@@ -184,45 +190,33 @@ const LogsTable: React.FC = () => {
           <TableRow key={index} log={log} />
         ))}
       </div>
-      <div className="flex w-full max-w-[1126px] items-stretch gap-[40px_100px] text-sm font-medium text-center leading-none flex-wrap mt-4 mx-8 max-md:max-w-full max-md:mr-2.5">
-        <div className="items-center flex h-10 gap-3 flex-1">
-          <div className="justify-center items-center rounded self-stretch flex gap-1 pr-[var(--Spacing-system-Spacing-None,] my-auto pl-[}] pt-[6px)] pb-[0px;]">
-            <div className="text-[#7C8598] text-sm font-medium self-stretch my-auto">
-              Items per page:
-            </div>
-            <div className="rounded border border-[color:var(--Border-Secondary,#DADDE2)] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.08)] self-stretch flex gap-0.5 text-[#4A525F] whitespace-nowrap my-auto p-2 border-solid">
-              <div className="flex gap-1">
-                <div className="text-[#4A525F] text-sm font-medium">
-                  {itemsPerPage}
-                </div>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/0c5e0c67df1403197472c9d6600aa3667ec4fca6?placeholderIfAbsent=true"
-                  className="aspect-[1] object-contain w-4 shrink-0"
-                />
+      <div className="flex w-full max-w-[1126px] items-center justify-between mt-4 mx-8 max-md:max-w-full">
+        <div className="flex items-center h-10 gap-3">
+          <div className="text-[#7C8598] text-sm font-medium">
+            Items per page:
+          </div>
+          <div className="rounded border border-[#DADDE2] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.08)] flex items-center text-[#4A525F] p-2 border-solid">
+            <div className="flex gap-1 items-center">
+              <div className="text-[#4A525F] text-sm font-medium">
+                {itemsPerPage}
               </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/0c5e0c67df1403197472c9d6600aa3667ec4fca6?placeholderIfAbsent=true"
+                className="aspect-[1] object-contain w-4 shrink-0"
+              />
             </div>
           </div>
         </div>
-        <div className="items-center flex min-h-10 gap-5 text-[#4A525F] whitespace-nowrap flex-1">
-          <button className="justify-center items-center rounded self-stretch flex gap-1 pr-[var(--Spacing-system-Spacing-None,] pl-[var(--Spacing-system-Spacing-None,] my-auto py-[6px)]">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/393ccefc5d7d9a0b12373e42d699bac37bbcf280?placeholderIfAbsent=true"
-              className="aspect-[1] object-contain w-4 self-stretch shrink-0 my-auto"
-            />
-            <div className="text-[#4A525F] text-sm font-medium self-stretch my-auto">
-              Previous
-            </div>
-          </button>
-          <button className="justify-center items-center rounded self-stretch flex gap-1 pr-[var(--Spacing-system-Spacing-None,] pl-[var(--Spacing-system-Spacing-None,] my-auto py-[6px)]">
-            <div className="text-[#4A525F] text-sm font-medium self-stretch my-auto">
-              Next
-            </div>
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/356449cb87aa29f824800d46e1d953e2c84fee26?placeholderIfAbsent=true"
-              className="aspect-[1] object-contain w-4 self-stretch shrink-0 my-auto"
-            />
-          </button>
-        </div>
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious href="#" />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationNext href="#" />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
       </div>
     </>
   );
