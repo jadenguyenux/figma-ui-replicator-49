@@ -7,7 +7,7 @@ import LogsTable from "./LogsTable";
 
 const RequestLogsTableView: React.FC = () => {
   return (
-    <div className="overflow-hidden bg-white">
+    <div className="overflow-hidden bg-white w-full">
       <div className="flex max-md:flex-col max-md:items-stretch">
         <div className="w-[249px] max-md:w-full">
           <Sidebar />
