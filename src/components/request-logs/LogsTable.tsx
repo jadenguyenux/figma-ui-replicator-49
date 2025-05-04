@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import TableRow from "./TableRow";
 import type { LogEntry } from "./TableRow";
@@ -125,7 +126,7 @@ const LogsTable: React.FC = () => {
   return (
     <>
       <div className="border shrink-0 h-px bg-[#EBEDEF] mt-[23px] border-[rgba(235,237,239,1)] border-solid max-md:max-w-full" />
-      <div className="flex w-full max-w-[1126px] items-stretch gap-5 text-sm font-medium leading-none flex-wrap justify-between mt-[22px] mx-8 max-md:max-w-full max-md:mr-2.5">
+      <div className="flex w-full items-stretch gap-5 text-sm font-medium leading-none flex-wrap justify-between mt-[22px] mx-8 max-md:max-w-full max-md:mr-2.5">
         <div className="items-center flex gap-4 my-auto">
           <div className="text-[#7C8598] text-sm font-medium self-stretch gap-2 my-auto">
             Last updated: {lastUpdated}
@@ -164,9 +165,9 @@ const LogsTable: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="border border-[#EBEDEF] bg-white mt-3.5 mx-8 rounded-lg border-solid max-md:max-w-full max-md:mr-2.5">
-        <div className="flex items-center min-h-[48px] w-full max-w-[1126px] text-sm text-[#7C8598] font-medium bg-[#F9FBFC] border-b border-[#DADDE2] rounded-t-lg max-md:max-w-full">
-          <div className="flex items-start justify-start w-[140px] px-4 py-2">
+      <div className="border border-[#EBEDEF] bg-white mt-3.5 mx-8 rounded-lg border-solid max-md:max-w-full">
+        <div className="flex items-center min-h-[48px] w-full text-sm text-[#7C8598] font-medium bg-[#F9FBFC] border-b border-[#DADDE2] rounded-t-lg max-md:max-w-full">
+          <div className="flex items-start justify-start w-[140px] px-4 py-2 whitespace-nowrap">
             Request ID
           </div>
           <div className="flex items-start justify-start w-[206px] px-4 py-2">
@@ -190,12 +191,12 @@ const LogsTable: React.FC = () => {
           <TableRow key={index} log={log} />
         ))}
       </div>
-      <div className="flex w-full max-w-[1126px] items-center justify-between mt-4 mx-8 mb-6 max-md:max-w-full">
+      <div className="flex w-full items-center justify-between mt-4 mx-8 mb-6 max-md:max-w-full">
         <div className="flex items-center h-10 gap-3">
           <div className="text-[#7C8598] text-sm font-medium whitespace-nowrap">
             Items per page:
           </div>
-          <div className="rounded border border-[#DADDE2] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.08)] flex items-center text-[#4A525F] px-3 py-2 border-solid cursor-pointer hover:border-[#999] min-w-[60px] justify-between">
+          <div className="rounded border border-[#DADDE2] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.08)] flex items-center text-[#4A525F] px-3 py-2 border-solid cursor-pointer hover:border-[#999] min-w-[80px] justify-between">
             <div className="text-[#4A525F] text-sm font-medium">
               {itemsPerPage}
             </div>
