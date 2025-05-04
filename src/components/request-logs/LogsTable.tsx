@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import TableRow from "./TableRow";
 import type { LogEntry } from "./TableRow";
@@ -131,7 +132,7 @@ const LogsTable: React.FC = () => {
             Last updated: {lastUpdated}
           </div>
           <button
-            className="items-center self-stretch flex gap-1 text-[#4A525F] my-auto"
+            className="items-center self-stretch flex gap-1 text-[#4A525F] my-auto hover:text-[#333] transition-colors"
             onClick={handleRefresh}
           >
             <img
@@ -149,7 +150,7 @@ const LogsTable: React.FC = () => {
               <div className="text-[#7C8598] text-sm font-medium self-stretch my-auto">
                 Sorted by:
               </div>
-              <div className="justify-center items-center rounded border border-[color:var(--Border-Secondary,#DADDE2)] self-stretch flex gap-2.5 text-[#4A525F] my-auto p-2 border-solid">
+              <div className="justify-center items-center rounded border border-[color:var(--Border-Secondary,#DADDE2)] self-stretch flex gap-2.5 text-[#4A525F] my-auto p-2 border-solid hover:border-[#999] cursor-pointer">
                 <div className="self-stretch flex items-center gap-1 my-auto">
                   <div className="text-[#4A525F] text-sm font-medium self-stretch my-auto">
                     {sortOrder}
@@ -190,12 +191,12 @@ const LogsTable: React.FC = () => {
           <TableRow key={index} log={log} />
         ))}
       </div>
-      <div className="flex w-full max-w-[1126px] items-center justify-between mt-4 mx-8 max-md:max-w-full">
+      <div className="flex w-full max-w-[1126px] items-center justify-between mt-4 mx-8 mb-6 max-md:max-w-full">
         <div className="flex items-center h-10 gap-3">
-          <div className="text-[#7C8598] text-sm font-medium">
+          <div className="text-[#7C8598] text-sm font-medium whitespace-nowrap">
             Items per page:
           </div>
-          <div className="rounded border border-[#DADDE2] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.08)] flex items-center text-[#4A525F] p-2 border-solid">
+          <div className="rounded border border-[#DADDE2] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.08)] flex items-center text-[#4A525F] p-2 border-solid cursor-pointer hover:border-[#999]">
             <div className="flex gap-1 items-center">
               <div className="text-[#4A525F] text-sm font-medium">
                 {itemsPerPage}
@@ -210,10 +211,10 @@ const LogsTable: React.FC = () => {
         <Pagination>
           <PaginationContent>
             <PaginationItem>
-              <PaginationPrevious href="#" />
+              <PaginationPrevious href="#" className="hover:bg-[#F8F8F8]" />
             </PaginationItem>
             <PaginationItem>
-              <PaginationNext href="#" />
+              <PaginationNext href="#" className="hover:bg-[#F8F8F8]" />
             </PaginationItem>
           </PaginationContent>
         </Pagination>

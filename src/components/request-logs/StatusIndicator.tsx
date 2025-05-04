@@ -1,3 +1,4 @@
+
 import React from "react";
 
 type StatusType = "success" | "warning" | "error";
@@ -8,32 +9,24 @@ interface StatusIndicatorProps {
 }
 
 const StatusIndicator: React.FC<StatusIndicatorProps> = ({ type, code }) => {
-  const getStatusImage = () => {
+  // Replace images with colored circles using CSS
+  const getStatusColor = () => {
     switch (type) {
       case "success":
-        return "https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/bac3c321179fc773030094cb5b03cb4a2d66eb8a?placeholderIfAbsent=true"; // Green dot
+        return "bg-[#0B835E]"; // Green for success
       case "warning":
-        return "https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/2f083121b9555ad730ebe8d17950e448cad72531?placeholderIfAbsent=true"; // Yellow dot
+        return "bg-[#EDB246]"; // Yellow for warning
       case "error":
-        return "https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/7ac46134508180c3a11b5db666827f5ff090f38a?placeholderIfAbsent=true"; // Red dot
+        return "bg-[#FB4830]"; // Red for error
       default:
-        return "https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/bac3c321179fc773030094cb5b03cb4a2d66eb8a?placeholderIfAbsent=true";
+        return "bg-[#0B835E]";
     }
   };
 
   return (
     <div className="items-center self-stretch flex min-h-10 gap-2 grow shrink">
       <div className="self-stretch flex items-center gap-2.5 w-1.5 my-auto">
-        <img
-          src={getStatusImage()}
-          className={`aspect-[1] object-contain w-1.5 self-stretch my-auto ${
-            type === "success"
-              ? "fill-[#0B835E]"
-              : type === "warning"
-                ? "fill-[#EDB246]"
-                : "fill-[#FB4830]"
-          }`}
-        />
+        <div className={`w-1.5 h-1.5 rounded-full ${getStatusColor()}`} />
       </div>
       <div className="text-[#4A525F] text-sm font-medium leading-none self-stretch my-auto">
         {code}
