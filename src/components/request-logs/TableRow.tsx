@@ -20,7 +20,7 @@ interface TableRowProps {
 const TableRow: React.FC<TableRowProps> = ({ log }) => {
   return (
     <div className="flex items-center border-b border-solid border-[#EBEDEF] min-h-[48px] w-full max-w-[1126px] hover:bg-[#F8F8F8] cursor-pointer max-md:max-w-full">
-      <div className="flex items-center text-[#4A525F] text-sm font-medium w-[140px] px-4 py-2">
+      <div className="flex items-center text-[#4A525F] text-sm font-medium w-[140px] px-4 py-2 whitespace-nowrap overflow-hidden text-ellipsis">
         {log.requestId}
       </div>
       <div className="flex items-center text-[#4A525F] text-sm font-medium w-[206px] px-4 py-2">
@@ -32,7 +32,7 @@ const TableRow: React.FC<TableRowProps> = ({ log }) => {
       <div className="flex items-center text-[#4A525F] text-sm font-medium w-[124px] px-4 py-2">
         {log.httpMethod}
       </div>
-      <div className="flex items-center text-[#4A525F] text-sm font-medium min-w-60 w-64 px-4 py-2">
+      <div className="flex items-center text-[#4A525F] text-sm font-medium min-w-60 w-64 px-4 py-2 overflow-hidden text-ellipsis">
         {log.endpoint}
       </div>
       <div className="flex items-center gap-2 w-[156px] px-4 py-2">

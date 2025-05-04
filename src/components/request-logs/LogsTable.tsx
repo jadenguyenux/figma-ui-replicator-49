@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import TableRow from "./TableRow";
 import type { LogEntry } from "./TableRow";
@@ -196,19 +195,17 @@ const LogsTable: React.FC = () => {
           <div className="text-[#7C8598] text-sm font-medium whitespace-nowrap">
             Items per page:
           </div>
-          <div className="rounded border border-[#DADDE2] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.08)] flex items-center text-[#4A525F] p-2 border-solid cursor-pointer hover:border-[#999]">
-            <div className="flex gap-1 items-center">
-              <div className="text-[#4A525F] text-sm font-medium">
-                {itemsPerPage}
-              </div>
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/0c5e0c67df1403197472c9d6600aa3667ec4fca6?placeholderIfAbsent=true"
-                className="aspect-[1] object-contain w-4 shrink-0"
-              />
+          <div className="rounded border border-[#DADDE2] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.08)] flex items-center text-[#4A525F] px-3 py-2 border-solid cursor-pointer hover:border-[#999] min-w-[60px] justify-between">
+            <div className="text-[#4A525F] text-sm font-medium">
+              {itemsPerPage}
             </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/0c5e0c67df1403197472c9d6600aa3667ec4fca6?placeholderIfAbsent=true"
+              className="aspect-[1] object-contain w-4 shrink-0 ml-1"
+            />
           </div>
         </div>
-        <Pagination>
+        <Pagination className="justify-end">
           <PaginationContent>
             <PaginationItem>
               <PaginationPrevious href="#" className="hover:bg-[#F8F8F8]" />

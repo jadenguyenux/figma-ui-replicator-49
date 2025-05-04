@@ -25,6 +25,7 @@ const Sidebar: React.FC = () => {
                   />
                 </div>
               </div>
+              {/* Menu items */}
               <div className="items-center flex w-full text-sm text-[#4A525F] whitespace-nowrap pl-2 mb-6 hover:bg-[#EBEDEF] rounded-md py-2 cursor-pointer">
                 <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto p-0">
                   <Home className="w-5 h-5 shrink-0" />
@@ -108,16 +109,13 @@ const Sidebar: React.FC = () => {
         <div className="w-full px-6 mt-4">
           <div className="flex min-h-px w-full bg-[#EBEDEF]" />
         </div>
+        {/* Production Mode Toggle and Rutter Logo */}
         <div className="flex flex-col w-full max-w-[249px] pt-8 pb-8 px-6">
           <div className="flex flex-col w-full gap-6">
-            <div className="items-center flex w-full pl-2 mb-6">
-              <div className="items-center self-stretch flex w-full gap-3 flex-1 shrink basis-[0%]">
-                <div className="self-stretch flex gap-2 w-10">
-                  <div className="w-10">
-                    <div className="flex flex-col justify-center bg-[#100218] px-1 py-0.5 rounded-[40px]">
-                      <ToggleLeft className="w-4 h-4 text-white" />
-                    </div>
-                  </div>
+            <div className="items-center flex w-full mb-6">
+              <div className="items-center self-stretch flex w-full gap-3">
+                <div className="flex justify-center items-center bg-[#100218] rounded-[40px] w-10 h-5">
+                  <ToggleLeft className="w-5 h-5 text-white" />
                 </div>
                 <div className="text-[#4A525F] text-base font-medium leading-[24px]">
                   Production mode
@@ -125,11 +123,13 @@ const Sidebar: React.FC = () => {
               </div>
             </div>
             <div className="flex w-full flex-col pb-8">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/33637e96a7e01e4c04762c49350fcf3dd088e91a?placeholderIfAbsent=true"
-                className="aspect-[5] object-contain w-[120px] max-w-full"
-                alt="Rutter"
-              />
+              <div className="flex items-center gap-1">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/33637e96a7e01e4c04762c49350fcf3dd088e91a?placeholderIfAbsent=true"
+                  className="h-5 object-contain"
+                  alt="Rutter"
+                />
+              </div>
             </div>
           </div>
         </div>

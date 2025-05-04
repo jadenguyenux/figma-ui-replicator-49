@@ -24,11 +24,9 @@ const StatusIndicator: React.FC<StatusIndicatorProps> = ({ type, code }) => {
   };
 
   return (
-    <div className="items-center self-stretch flex min-h-10 gap-2 grow shrink">
-      <div className="self-stretch flex items-center gap-2.5 w-1.5 my-auto">
-        <div className={`w-1.5 h-1.5 rounded-full ${getStatusColor()}`} />
-      </div>
-      <div className="text-[#4A525F] text-sm font-medium leading-none self-stretch my-auto">
+    <div className="flex items-center gap-2.5">
+      <div className={`w-1.5 h-1.5 rounded-full ${getStatusColor()}`} />
+      <div className="text-[#4A525F] text-sm font-medium">
         {code}
       </div>
     </div>
