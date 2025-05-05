@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Home, Layers, Link, FileText, Settings, BookOpen, Wrench, ToggleRight } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
@@ -38,7 +37,9 @@ const Sidebar: React.FC = () => {
               </div>
               <div className="items-center flex w-full text-sm text-[#4A525F] whitespace-nowrap pl-2 mb-6 hover:bg-[#EBEDEF] rounded-md py-2 cursor-pointer">
                 <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto p-0">
-                  <Layers className="w-5 h-5 shrink-0" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" className="w-5 h-5 shrink-0">
+                    <path fill="#4A525F" stroke="#4A525F" strokeWidth=".094" d="M5.25 12.797h4.5a1.452 1.452 0 0 1 1.453 1.453v4.5a1.452 1.452 0 0 1-1.453 1.453h-4.5a1.453 1.453 0 0 1-1.453-1.453v-4.5a1.453 1.453 0 0 1 1.453-1.453Zm9 0h4.5a1.452 1.452 0 0 1 1.453 1.453v4.5a1.452 1.452 0 0 1-1.453 1.453h-4.5a1.452 1.452 0 0 1-1.453-1.453v-4.5a1.452 1.452 0 0 1 1.453-1.453Zm-9.047 6h4.594v-4.594H5.203v4.594Zm9 0h4.594v-4.594h-4.594v4.594Zm-8.953-15h4.5a1.453 1.453 0 0 1 1.453 1.453v4.5a1.452 1.452 0 0 1-1.453 1.453h-4.5A1.453 1.453 0 0 1 3.797 9.75v-4.5l.007-.144a1.453 1.453 0 0 1 1.446-1.31Zm9 0h4.5a1.453 1.453 0 0 1 1.453 1.453v4.5a1.452 1.452 0 0 1-1.453 1.453h-4.5a1.452 1.452 0 0 1-1.453-1.453v-4.5a1.453 1.453 0 0 1 1.453-1.453Zm-9.047 6h4.594V5.203H5.203v4.594Zm9 0h4.594V5.203h-4.594v4.594Z"/>
+                  </svg>
                   <div className="text-[#4A525F] text-sm font-medium leading-[24px]">
                     Platforms
                   </div>
