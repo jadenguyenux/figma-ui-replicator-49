@@ -9,7 +9,6 @@ interface StatusIndicatorProps {
 }
 
 const StatusIndicator: React.FC<StatusIndicatorProps> = ({ type, code }) => {
-  // Replace images with colored circles using CSS
   const getStatusColor = () => {
     switch (type) {
       case "success":
@@ -25,7 +24,7 @@ const StatusIndicator: React.FC<StatusIndicatorProps> = ({ type, code }) => {
 
   return (
     <div className="flex items-center gap-2.5">
-      <div className={`w-1.5 h-1.5 rounded-full ${getStatusColor()}`} />
+      <div className={`w-2 h-2 rounded-full ${getStatusColor()}`} />
       <div className="text-[#4A525F] text-sm font-medium">
         {code}
       </div>

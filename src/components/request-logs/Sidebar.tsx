@@ -1,136 +1,74 @@
+
 import React from "react";
 import { Home, Layers, Link, FileText, Settings, BookOpen, Wrench, ToggleRight } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="items-stretch flex grow overflow-hidden w-full bg-[#F9FBFC] p-0">
-      <div className="min-w-60 w-[249px] flex flex-col justify-between h-full">
-        <div className="flex w-full justify-between flex-1">
-          <div className="min-w-60 w-full flex-1 shrink basis-[0%] p-0">
-            <div className="w-full font-medium gap-[24px] pt-8 pb-4 px-6">
-              <div className="items-center flex w-full whitespace-nowrap mb-8">
-                <div className="self-stretch flex w-full gap-[40px_66px] justify-between flex-1 shrink basis-[0%] my-auto">
-                  <div>
-                    <div className="text-[#4A525F] text-lg font-medium leading-[24px]">
-                      Account
-                    </div>
-                    <div className="text-[#1B1D22] text-xs font-medium leading-[20px]">
-                      david@notch.com
-                    </div>
-                  </div>
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/96095f8e98f82da2486752181dbb7ef303d97417?placeholderIfAbsent=true"
-                    className="aspect-[1] object-contain w-5 shrink-0"
-                    alt="Account"
-                  />
-                </div>
-              </div>
-              {/* Menu items */}
-              <div className="items-center flex w-full text-sm text-[#4A525F] whitespace-nowrap pl-2 mb-6 hover:bg-[#EBEDEF] rounded-md py-2 cursor-pointer">
-                <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto p-0">
-                  <Home className="w-5 h-5 shrink-0" />
-                  <div className="text-[#4A525F] text-sm font-medium leading-[24px]">
-                    Dashboard
-                  </div>
-                </div>
-              </div>
-              <div className="items-center flex w-full text-sm text-[#4A525F] whitespace-nowrap pl-2 mb-6 hover:bg-[#EBEDEF] rounded-md py-2 cursor-pointer">
-                <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto p-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" className="w-5 h-5 shrink-0">
-                    <path fill="#4A525F" stroke="#4A525F" strokeWidth=".094" d="M12.302 4.483a1.547 1.547 0 1 0-.604 3.034 1.547 1.547 0 0 0 .604-3.034ZM11.297 8.87l-.035-.01a2.954 2.954 0 1 1 1.476 0l-.035.01v10.647l.05-.005a8.314 8.314 0 0 0 7.51-7.508l.005-.051H18.75a.703.703 0 1 1 0-1.407H21a.704.704 0 0 1 .703.704l-.012.481a9.703 9.703 0 0 1-19.394-.482.704.704 0 0 1 .703-.703h2.25a.704.704 0 0 1 0 1.407H3.732l.005.051a8.312 8.312 0 0 0 7.51 7.508l.05.005V8.87Z"/>
-                  </svg>
-                  <div className="text-[#4A525F] text-sm font-medium leading-[24px]">
-                    Platforms
-                  </div>
-                </div>
-              </div>
-              <div className="items-center flex w-full text-sm text-[#4A525F] whitespace-nowrap pl-2 mb-6 hover:bg-[#EBEDEF] rounded-md py-2 cursor-pointer">
-                <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto p-0">
-                  <Link className="w-5 h-5 shrink-0" />
-                  <div className="text-[#4A525F] text-sm font-medium leading-[24px]">
-                    Connections
-                  </div>
-                </div>
-              </div>
-              <div className="items-center flex w-full text-sm text-[#4A525F] whitespace-nowrap pl-2 mb-6 hover:bg-[#EBEDEF] rounded-md py-2 cursor-pointer">
-                <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto p-0">
-                  <Layers className="w-5 h-5 shrink-0" />
-                  <div className="text-[#4A525F] text-sm font-medium leading-[24px]">
-                    Webhooks
-                  </div>
-                </div>
-              </div>
-              <div className="items-center rounded flex w-full text-sm bg-[#EBEDEF] mb-6 py-2 cursor-pointer">
-                <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto pl-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" className="w-5 h-5 shrink-0">
-                    <path fill="#4A525F" stroke="#1B1D22" stroke-width=".094" d="M4.125 16.922a1.079 1.079 0 1 1 .001 2.157 1.079 1.079 0 0 1-.001-2.157Zm4.125.375h12a.703.703 0 0 1 0 1.406h-12a.703.703 0 0 1 0-1.406Zm-4.125-6.375a1.079 1.079 0 1 1-.158.012l.158-.012Zm4.125.375h12a.703.703 0 0 1 0 1.406h-12a.703.703 0 0 1 0-1.406ZM4.125 4.922A1.079 1.079 0 0 1 5.203 6l-.012.158a1.078 1.078 0 1 1-1.066-1.236Zm4.125.375h12a.703.703 0 0 1 0 1.406h-12a.703.703 0 0 1 0-1.406Z"/>
-                  </svg>
-                  <div className="text-[#1B1D22] text-sm font-medium leading-[24px]">
-                    Request logs
-                  </div>
-                </div>
-              </div>
-              <div className="items-center flex w-full text-sm text-[#4A525F] whitespace-nowrap pl-2 mb-6 hover:bg-[#EBEDEF] rounded-md py-2 cursor-pointer">
-                <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto p-0">
-                  <Wrench className="w-5 h-5 shrink-0" />
-                  <div className="text-[#4A525F] text-sm font-medium leading-[24px]">
-                    Configuration
-                  </div>
-                </div>
-              </div>
-              <div className="items-center flex w-full text-sm text-[#4A525F] pl-2 mb-6 hover:bg-[#EBEDEF] rounded-md py-2 cursor-pointer">
-                <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto p-0">
-                  <Link className="w-5 h-5 shrink-0" />
-                  <div className="text-[#4A525F] text-sm font-medium leading-[24px]">
-                    Rutter Link
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full px-6">
-              <div className="flex min-h-px w-full bg-[#EBEDEF]" />
-            </div>
-            <div className="w-full text-sm text-[#4A525F] font-medium gap-6 pt-8 pb-4 px-6">
-              <div className="items-center flex w-full pl-2 mb-6 hover:bg-[#EBEDEF] rounded-md py-2 cursor-pointer">
-                <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto p-0">
-                  <BookOpen className="w-5 h-5 shrink-0" />
-                  <div className="text-[#4A525F] text-sm font-medium leading-[24px]">
-                    Getting started
-                  </div>
-                </div>
-              </div>
-              <div className="items-center flex w-full whitespace-nowrap pl-2 hover:bg-[#EBEDEF] rounded-md py-2 cursor-pointer">
-                <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto p-0">
-                  <Settings className="w-5 h-5 shrink-0" />
-                  <div className="text-[#4A525F] text-sm font-medium leading-[24px]">
-                    Settings
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div className="min-h-screen bg-[#F9FBFC] flex flex-col justify-between">
+      {/* Top section */}
+      <div className="flex flex-col">
+        {/* Account header */}
+        <div className="flex items-center justify-between p-6 mb-2">
+          <div>
+            <div className="text-[#4A525F] text-lg font-medium">Account</div>
+            <div className="text-[#1B1D22] text-xs">david@notch.com</div>
           </div>
+          <button className="w-5 h-5">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/96095f8e98f82da2486752181dbb7ef303d97417?placeholderIfAbsent=true"
+              className="w-5 h-5"
+              alt="Collapse sidebar"
+            />
+          </button>
         </div>
-        <div className="w-full px-6 mt-4">
-          <div className="flex min-h-px w-full bg-[#EBEDEF]" />
+
+        {/* Navigation menu */}
+        <div className="px-4">
+          <NavItem icon={<Home className="w-5 h-5" />} label="Dashboard" />
+          <NavItem 
+            icon={
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" className="w-5 h-5">
+                <path fill="#4A525F" stroke="#4A525F" strokeWidth=".094" d="M12.302 4.483a1.547 1.547 0 1 0-.604 3.034 1.547 1.547 0 0 0 .604-3.034ZM11.297 8.87l-.035-.01a2.954 2.954 0 1 1 1.476 0l-.035.01v10.647l.05-.005a8.314 8.314 0 0 0 7.51-7.508l.005-.051H18.75a.703.703 0 1 1 0-1.407H21a.704.704 0 0 1 .703.704l-.012.481a9.703 9.703 0 0 1-19.394-.482.704.704 0 0 1 .703-.703h2.25a.704.704 0 0 1 0 1.407H3.732l.005.051a8.312 8.312 0 0 0 7.51 7.508l.05.005V8.87Z"/>
+              </svg>
+            } 
+            label="Platforms" 
+          />
+          <NavItem icon={<Link className="w-5 h-5" />} label="Connections" />
+          <NavItem icon={<Layers className="w-5 h-5" />} label="Webhooks" />
+          <NavItem 
+            icon={
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" className="w-5 h-5">
+                <path fill="#4A525F" stroke="#1B1D22" strokeWidth=".094" d="M4.125 16.922a1.079 1.079 0 1 1 .001 2.157 1.079 1.079 0 0 1-.001-2.157Zm4.125.375h12a.703.703 0 0 1 0 1.406h-12a.703.703 0 0 1 0-1.406Zm-4.125-6.375a1.079 1.079 0 1 1-.158.012l.158-.012Zm4.125.375h12a.703.703 0 0 1 0 1.406h-12a.703.703 0 0 1 0-1.406ZM4.125 4.922A1.079 1.079 0 0 1 5.203 6l-.012.158a1.078 1.078 0 1 1-1.066-1.236Zm4.125.375h12a.703.703 0 0 1 0 1.406h-12a.703.703 0 0 1 0-1.406Z"/>
+              </svg>
+            } 
+            label="Request logs" 
+            active 
+          />
+          <NavItem icon={<Wrench className="w-5 h-5" />} label="Configuration" />
+          <NavItem icon={<Link className="w-5 h-5" />} label="Rutter Link" />
+
+          <div className="h-px bg-[#EBEDEF] my-4" />
+
+          <NavItem icon={<BookOpen className="w-5 h-5" />} label="Getting started" />
+          <NavItem icon={<Settings className="w-5 h-5" />} label="Settings" />
         </div>
-        
-        {/* Production Mode Toggle and Rutter Logo - Fixed positioning at bottom */}
-        <div className="w-full px-6 py-6 mt-auto">
+      </div>
+
+      {/* Bottom section */}
+      <div className="mt-auto">
+        <div className="h-px bg-[#EBEDEF] mb-4" />
+        <div className="px-6 pb-6">
           {/* Production Mode Toggle */}
-          <div className="items-center flex w-full mb-6">
-            <div className="flex items-center gap-3 w-full">
-              <div className="relative">
-                <Switch id="production-mode" className="bg-[#100218]" defaultChecked />
-              </div>
-              <label htmlFor="production-mode" className="text-[#4A525F] text-base font-medium leading-[24px] cursor-pointer">
-                Production mode
-              </label>
-            </div>
+          <div className="flex items-center justify-between mb-6">
+            <label htmlFor="production-mode" className="text-[#4A525F] text-sm font-medium cursor-pointer">
+              Production mode
+            </label>
+            <Switch id="production-mode" className="bg-[#100218]" defaultChecked />
           </div>
-          
+
           {/* Rutter Logo */}
-          <div className="flex w-full pt-2 pb-4">
+          <div className="pt-2">
             <svg width="81" height="20" viewBox="0 0 81 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.69946 19.3198L0 1.91974H3.46073L5.30296 15.4791L8.76369 1.91974H11.6518L15.1125 15.4791L16.9548 1.91974H20.4155L17.7161 19.3198H14.3514L10.4909 5.76046H9.92461L6.06413 19.3198H2.69946Z" fill="#100218"/>
               <path d="M28.9974 19.7443C26.915 19.7443 25.1687 19.0474 23.7587 17.6535C22.3486 16.2596 21.6436 14.532 21.6436 12.4708C21.6436 10.4097 22.3486 8.68213 23.7587 7.28821C25.1687 5.89429 26.915 5.19733 28.9974 5.19733C31.0798 5.19733 32.8261 5.89429 34.2362 7.28821C35.6462 8.68213 36.3513 10.4097 36.3513 12.4708C36.3513 14.532 35.6462 16.2596 34.2362 17.6535C32.8261 19.0474 31.0798 19.7443 28.9974 19.7443ZM28.9974 17.017C30.1584 17.017 31.1713 16.6334 32.0361 15.866C32.901 15.0987 33.3334 13.9134 33.3334 12.4708C33.3334 11.0283 32.901 9.84296 32.0361 8.91116C31.1713 8.04383 30.1584 7.60186 28.9974 7.60186C27.8364 7.60186 26.8235 8.04383 25.9586 8.91116C25.0938 9.84296 24.6614 11.0283 24.6614 12.4708C24.6614 13.9134 25.0938 15.0987 25.9586 15.866C26.8235 16.6334 27.8364 17.017 28.9974 17.017Z" fill="#100218"/>
@@ -142,7 +80,25 @@ const Sidebar: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-px shrink-0 h-full bg-[#EBEDEF]" />
+    </div>
+  );
+};
+
+interface NavItemProps {
+  icon: React.ReactNode;
+  label: string;
+  active?: boolean;
+}
+
+const NavItem: React.FC<NavItemProps> = ({ icon, label, active }) => {
+  return (
+    <div 
+      className={`flex items-center gap-3 px-4 py-2 mb-2 rounded-md cursor-pointer ${
+        active ? 'bg-[#EBEDEF] text-[#1B1D22]' : 'hover:bg-[#EBEDEF] text-[#4A525F]'
+      }`}
+    >
+      {icon}
+      <span className="text-sm font-medium">{label}</span>
     </div>
   );
 };

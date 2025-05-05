@@ -3,12 +3,14 @@ import React, { useState } from "react";
 import TableRow from "./TableRow";
 import type { LogEntry } from "./TableRow";
 import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow as UITableRow,
+} from "@/components/ui/table";
+import { ChevronLeft, ChevronRight, RefreshCw, ChevronDown } from "lucide-react";
 
 const mockLogs: LogEntry[] = [
   {
@@ -114,7 +116,7 @@ const mockLogs: LogEntry[] = [
 ];
 
 const LogsTable: React.FC = () => {
-  const [itemsPerPage] = useState(10);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
   const [sortOrder, setSortOrder] = useState("Newest first");
   const [lastUpdated] = useState("2024-04-30 13:27:22");
 
@@ -124,100 +126,67 @@ const LogsTable: React.FC = () => {
   };
 
   return (
-    <>
-      <div className="border shrink-0 h-px bg-[#EBEDEF] mt-[23px] border-[rgba(235,237,239,1)] border-solid max-md:max-w-full" />
-      <div className="flex w-full items-stretch gap-5 text-sm font-medium leading-none flex-wrap justify-between mt-[22px] mx-8 max-md:max-w-full max-md:mr-2.5">
-        <div className="items-center flex gap-4 my-auto">
-          <div className="text-[#7C8598] text-sm font-medium self-stretch gap-2 my-auto">
-            Last updated: {lastUpdated}
-          </div>
-          <button
-            className="items-center self-stretch flex gap-1 text-[#4A525F] my-auto hover:text-[#333] transition-colors"
+    <div className="px-8 pb-6">
+      <div className="flex justify-between items-center mt-2 mb-4">
+        <div className="flex items-center gap-4">
+          <span className="text-[#7C8598] text-sm">Last updated: {lastUpdated}</span>
+          <button 
             onClick={handleRefresh}
+            className="flex items-center gap-1 text-[#7C8598] hover:text-[#4A525F]"
           >
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/4917edefa4d9ebda05d2b74f0da9001847b00e73?placeholderIfAbsent=true"
-              className="aspect-[1] object-contain w-4 self-stretch shrink-0 my-auto"
-            />
-            <div className="text-[#4A525F] text-sm font-medium self-stretch my-auto">
-              Refresh
-            </div>
+            <RefreshCw className="w-4 h-4" />
+            <span className="text-sm">Refresh</span>
           </button>
         </div>
-        <div className="items-center flex gap-4">
-          <div className="self-stretch flex gap-4 my-auto">
-            <div className="items-center flex gap-2">
-              <div className="text-[#7C8598] text-sm font-medium self-stretch my-auto">
-                Sorted by:
-              </div>
-              <div className="justify-center items-center rounded border border-[color:var(--Border-Secondary,#DADDE2)] self-stretch flex gap-2.5 text-[#4A525F] my-auto p-2 border-solid hover:border-[#999] cursor-pointer">
-                <div className="self-stretch flex items-center gap-1 my-auto">
-                  <div className="text-[#4A525F] text-sm font-medium self-stretch my-auto">
-                    {sortOrder}
-                  </div>
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/8faf9cc66406552c54cf61736191914cd8264277?placeholderIfAbsent=true"
-                    className="aspect-[1] object-contain w-4 self-stretch shrink-0 my-auto"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="flex items-center gap-2">
+          <span className="text-[#7C8598] text-sm">Sorted by:</span>
+          <button className="flex items-center gap-1 border border-[#DADDE2] rounded px-3 py-2 text-sm text-[#4A525F] hover:border-[#999]">
+            {sortOrder}
+            <ChevronDown className="w-4 h-4 ml-1" />
+          </button>
         </div>
       </div>
-      <div className="border border-[#EBEDEF] bg-white mt-3.5 mx-8 rounded-lg border-solid max-md:max-w-full">
-        <div className="flex items-center min-h-[48px] w-full text-sm text-[#7C8598] font-medium bg-[#F9FBFC] border-b border-[#DADDE2] rounded-t-lg max-md:max-w-full">
-          <div className="flex items-start justify-start w-[140px] px-4 py-2 whitespace-nowrap">
-            Request ID
-          </div>
-          <div className="flex items-start justify-start w-[206px] px-4 py-2">
-            Timestamp
-          </div>
-          <div className="flex items-start justify-start w-[98px] px-4 py-2">
-            Status code
-          </div>
-          <div className="flex items-start justify-start w-[124px] px-4 py-2">
-            HTTP method
-          </div>
-          <div className="flex items-start justify-start w-64 px-4 py-2">
-            Endpoint
-          </div>
-          <div className="flex items-start justify-start w-[156px] px-4 py-2">
-            Platform
-          </div>
-        </div>
-
-        {mockLogs.map((log, index) => (
-          <TableRow key={index} log={log} />
-        ))}
+      
+      <div className="border rounded-lg border-[#EBEDEF] overflow-hidden">
+        <Table>
+          <TableHeader className="bg-[#F9FBFC]">
+            <UITableRow className="hover:bg-[#F9FBFC]">
+              <TableHead className="text-[#7C8598] font-medium pl-6">Request ID</TableHead>
+              <TableHead className="text-[#7C8598] font-medium">Timestamp</TableHead>
+              <TableHead className="text-[#7C8598] font-medium">Status code</TableHead>
+              <TableHead className="text-[#7C8598] font-medium">HTTP method</TableHead>
+              <TableHead className="text-[#7C8598] font-medium">Endpoint</TableHead>
+              <TableHead className="text-[#7C8598] font-medium">Platform</TableHead>
+            </UITableRow>
+          </TableHeader>
+          <TableBody>
+            {mockLogs.map((log, index) => (
+              <TableRow key={index} log={log} />
+            ))}
+          </TableBody>
+        </Table>
       </div>
-      <div className="flex w-full items-center justify-between mt-4 mx-8 mb-6 max-md:max-w-full">
-        <div className="flex items-center h-10 gap-3">
-          <div className="text-[#7C8598] text-sm font-medium whitespace-nowrap">
-            Items per page:
-          </div>
-          <div className="rounded border border-[#DADDE2] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.08)] flex items-center text-[#4A525F] px-3 py-2 border-solid cursor-pointer hover:border-[#999] min-w-[80px] justify-between">
-            <div className="text-[#4A525F] text-sm font-medium">
-              {itemsPerPage}
-            </div>
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/42cc76b3efce4704b61765c2d3f2b3db/0c5e0c67df1403197472c9d6600aa3667ec4fca6?placeholderIfAbsent=true"
-              className="aspect-[1] object-contain w-4 shrink-0 ml-1"
-            />
-          </div>
+      
+      <div className="flex justify-between items-center mt-6">
+        <div className="flex items-center gap-2">
+          <span className="text-[#7C8598] text-sm">Items per page:</span>
+          <button className="flex items-center gap-2 border border-[#DADDE2] rounded px-3 py-2 bg-white text-[#4A525F] text-sm hover:border-[#999]">
+            {itemsPerPage}
+            <ChevronDown className="w-4 h-4" />
+          </button>
         </div>
-        <Pagination className="justify-end">
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious href="#" className="hover:bg-[#F8F8F8]" />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext href="#" className="hover:bg-[#F8F8F8]" />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
+        <div className="flex items-center gap-2">
+          <button className="flex items-center border border-[#DADDE2] rounded p-2 text-[#4A525F] hover:bg-[#F9FBFC]">
+            <ChevronLeft className="w-4 h-4" />
+            <span className="text-sm ml-1">Previous</span>
+          </button>
+          <button className="flex items-center border border-[#DADDE2] rounded p-2 text-[#4A525F] hover:bg-[#F9FBFC]">
+            <span className="text-sm mr-1">Next</span>
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
