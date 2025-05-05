@@ -151,12 +151,12 @@ const LogsTable: React.FC = () => {
         <Table>
           <TableHeader className="bg-[#F9FBFC]">
             <UITableRow className="hover:bg-[#F9FBFC]">
-              <TableHead className="text-[#7C8598] font-medium pl-6">Request ID</TableHead>
-              <TableHead className="text-[#7C8598] font-medium">Timestamp</TableHead>
-              <TableHead className="text-[#7C8598] font-medium">Status code</TableHead>
-              <TableHead className="text-[#7C8598] font-medium">HTTP method</TableHead>
-              <TableHead className="text-[#7C8598] font-medium">Endpoint</TableHead>
-              <TableHead className="text-[#7C8598] font-medium">Platform</TableHead>
+              <TableHead className="text-[#7C8598] font-medium pl-6 py-4">Request ID</TableHead>
+              <TableHead className="text-[#7C8598] font-medium px-6 py-4">Timestamp</TableHead>
+              <TableHead className="text-[#7C8598] font-medium px-6 py-4">Status code</TableHead>
+              <TableHead className="text-[#7C8598] font-medium px-6 py-4">HTTP method</TableHead>
+              <TableHead className="text-[#7C8598] font-medium px-6 py-4">Endpoint</TableHead>
+              <TableHead className="text-[#7C8598] font-medium px-6 py-4">Platform</TableHead>
             </UITableRow>
           </TableHeader>
           <TableBody>
