@@ -64,7 +64,7 @@ const Sidebar: React.FC = () => {
               <div className="items-center rounded flex w-full text-sm bg-[#EBEDEF] mb-6 py-2 cursor-pointer">
                 <div className="self-stretch flex w-full gap-3 flex-1 shrink basis-[0%] my-auto pl-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" className="w-5 h-5 shrink-0">
-                    <path fill="#4A525F" stroke="#4A525F" strokeWidth=".094" d="M12.302 4.483a1.547 1.547 0 1 0-.604 3.034 1.547 1.547 0 0 0 .604-3.034ZM11.297 8.87l-.035-.01a2.954 2.954 0 1 1 1.476 0l-.035.01v10.647l.05-.005a8.314 8.314 0 0 0 7.51-7.508l.005-.051H18.75a.703.703 0 1 1 0-1.407H21a.704.704 0 0 1 .703.704l-.012.481a9.703 9.703 0 0 1-19.394-.482.704.704 0 0 1 .703-.703h2.25a.704.704 0 0 1 0 1.407H3.732l.005.051a8.312 8.312 0 0 0 7.51 7.508l.05.005V8.87Z"/>
+                    <path fill="#4A525F" stroke="#1B1D22" stroke-width=".094" d="M4.125 16.922a1.079 1.079 0 1 1 .001 2.157 1.079 1.079 0 0 1-.001-2.157Zm4.125.375h12a.703.703 0 0 1 0 1.406h-12a.703.703 0 0 1 0-1.406Zm-4.125-6.375a1.079 1.079 0 1 1-.158.012l.158-.012Zm4.125.375h12a.703.703 0 0 1 0 1.406h-12a.703.703 0 0 1 0-1.406ZM4.125 4.922A1.079 1.079 0 0 1 5.203 6l-.012.158a1.078 1.078 0 1 1-1.066-1.236Zm4.125.375h12a.703.703 0 0 1 0 1.406h-12a.703.703 0 0 1 0-1.406Z"/>
                   </svg>
                   <div className="text-[#1B1D22] text-sm font-medium leading-[24px]">
                     Request logs
